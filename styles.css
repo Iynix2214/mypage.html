@@ -1,0 +1,194 @@
+/* styles.css */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+}
+
+.aquarium {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #87CEEB, #00008B); /* Light blue to dark blue gradient */
+}
+
+/* Common styles for fish/sharks */
+.fish {
+    position: absolute;
+    width: 150px;
+    height: auto;
+    background-size: cover;
+    animation: swim 15s infinite linear, swim-motion 1.5s infinite ease-in-out;
+}
+
+/* Specific styles for each fish/shark */
+#fish1 {
+    background-image: url('pictures/fish1.png');
+    top: 20%;
+    left: 0;
+}
+
+#fish2 {
+    background-image: url('pictures/fish1.png');
+    top: 30%;
+    left: 20%;
+    animation-duration: 18s, 2s;
+}
+
+#fish3 {
+    background-image: url('pictures/fish1.png');
+    top: 40%;
+    left: 40%;
+    animation-duration: 20s, 2.5s;
+}
+
+/* Keyframes for swimming motion */
+@keyframes swim {
+    0% { 
+        transform: translateX(-150px) scaleX(1); 
+    }
+    50% { 
+        transform: translateX(calc(100vw + 150px)) scaleX(-1); 
+    }
+    100% { 
+        transform: translateX(-150px) scaleX(1); 
+    }
+}
+
+@keyframes swim-motion {
+    0% { 
+        transform: translateY(0) rotate(0deg); 
+    }
+    25% { 
+        transform: translateY(-10px) rotate(3deg); 
+    }
+    50% { 
+        transform: translateY(0) rotate(0deg); 
+    }
+    75% { 
+        transform: translateY(10px) rotate(-3deg); 
+    }
+    100% { 
+        transform: translateY(0) rotate(0deg); 
+    }
+}
+
+/* Common styles for Justin images */
+.justin {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-size: cover;
+    animation: float 3s infinite ease-in-out, drift 2s infinite ease-in-out alternate;
+    opacity: 0.9;
+}
+
+/* Specific styles for each Justin image */
+#justin1 {
+    background-image: url('pictures/justin1.jpg');
+    top: 10%;
+    left: 10%;
+}
+
+#justin2 {
+    background-image: url('pictures/justin2.jpg');
+    top: 20%;
+    left: 30%;
+    animation-duration: 3.5s, 2s;
+}
+
+#justin3 {
+    background-image: url('pictures/justin3.jpg');
+    top: 30%;
+    left: 50%;
+    animation-duration: 4s, 2.5s;
+}
+
+#justin4 {
+    background-image: url('pictures/justin4.jpg');
+    top: 40%;
+    left: 70%;
+    animation-duration: 4.5s, 3s;
+}
+
+#justin5 {
+    background-image: url('pictures/justin5.jpg');
+    top: 50%;
+    left: 20%;
+    animation-duration: 5s, 3.5s;
+}
+
+#justin6 {
+    background-image: url('pictures/justin6.jpg');
+    top: 60%;
+    left: 40%;
+    animation-duration: 5.5s, 4s;
+}
+
+/* Floating animation for Justin images */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Drift animation for Justin images */
+@keyframes drift {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(15px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Bubble styles */
+#bubble-trail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.bubble {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    animation: rise 3s ease-out forwards;
+}
+
+@keyframes rise {
+    0% { transform: translateY(0) scale(0.5); opacity: 1; }
+    100% { transform: translateY(-300px) scale(1); opacity: 0; }
+}
+
+/* Points display */
+#points {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: white;
+    font-family: Arial, sans-serif;
+}
